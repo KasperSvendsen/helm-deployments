@@ -1,0 +1,13 @@
+# values.yaml
+
+image:
+  repository: kaspersvend/cv
+  tag: "latest"  # This will be dynamically updated by Helm in your CI pipeline
+
+service:
+  port: 80
+
+ingress:
+  enabled: true
+  host: kaspersvendsen.dk
+  tlsSecret: kaspersvendsen-cert
