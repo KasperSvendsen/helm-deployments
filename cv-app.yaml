@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cv-app
+  namespace: argocd
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: kaspersvend/cv
+    argocd-image-updater.argoproj.io/write-back-method: git
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/KasperSvendsen/helm-deployments.git'
+    targetRevision: main
+    path: cv-chart
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: cv
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
