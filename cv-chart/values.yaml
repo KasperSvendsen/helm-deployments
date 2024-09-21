@@ -2,7 +2,7 @@
 
 image:
   repository: kaspersvend/cv
-  tag: "latest"  # This will be dynamically updated by Helm in your CI pipeline
+  tag: "latest"  # Argo CD Image Updater will dynamically update this tag.
 
 service:
   port: 80
