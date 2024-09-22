@@ -4,7 +4,7 @@ metadata:
   name: cv
   namespace: argocd
   annotations:
-    argocd-image-updater.argoproj.io/image-list: kaspersvend/cv-app
+    argocd-image-updater.argoproj.io/image-list: kaspersvend/cv
     argocd-image-updater.argoproj.io/write-back-method: git
 spec:
   project: default
