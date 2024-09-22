@@ -4,5 +4,5 @@ helm:
     value: kaspersvend/cv
     forcestring: true
   - name: image.tag
-    value: v33.0.0
+    value: v34.0.0
     forcestring: true
