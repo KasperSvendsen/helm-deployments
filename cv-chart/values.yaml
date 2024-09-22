@@ -1,6 +1,6 @@
 image:
   repository: kaspersvend/cv
-  tag: "{{ .Values.image.tag }}"  # Use Helm templating to pass the version dynamically.
+  tag: "v0.1.0"  # Initially set to a specific version or "latest"
   pullPolicy: Always
 
 service:
