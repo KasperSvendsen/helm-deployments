@@ -4,10 +4,11 @@ metadata:
   name: cv
   namespace: argocd
   annotations:
-    argocd-image-updater.argoproj.io/image-list: kaspersvend/cv:v0.1.0  
+    argocd-image-updater.argoproj.io/image-list: kaspersvend/cv:v0.1.0
     argocd-image-updater.argoproj.io/write-back-method: git
     argocd-image-updater.argoproj.io/image-digest: "true"
     argocd-image-updater.argoproj.io/image-tag-force-update: "true"
+spec:  
   project: default
   source:
     repoURL: 'https://github.com/KasperSvendsen/helm-deployments'
