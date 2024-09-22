@@ -4,5 +4,5 @@ helm:
     value: kaspersvend/cv
     forcestring: true
   - name: image.tag
-    value: v0.1.0@sha256:b3622a8829ca01a80d4d5285ee45420f9413189aef32f91f3410843be242aa20
+    value: v32.0.0
     forcestring: true
