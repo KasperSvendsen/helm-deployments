@@ -1,18 +1,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: cv
+  name: cv-app
   namespace: argocd
   annotations:
-    argocd-image-updater.argoproj.io/image-list: kaspersvend/cv:v0.1.0
-    argocd-image-updater.argoproj.io/write-back-method: git
-    argocd-image-updater.argoproj.io/image-digest: "true"
-    argocd-image-updater.argoproj.io/image-tag-force-update: "true"
-spec:  
+    argocd-image-updater.argoproj.io/image-list: kaspersvend_cv=kaspersvend/cv:latest
+    argocd-image-updater.argoproj.io/kaspersvend_cv.update-strategy: digest
+    argocd-image-updater.argoproj.io/kaspersvend_cv.allow-tags: regexp:^latest$
+    argocd-image-updater.argoproj.io/write-back-method: git:secret:argocd/image-updater-ssh
+    argocd-image-updater.argoproj.io/git-branch: main
+spec:
   project: default
   source:
-    repoURL: 'https://github.com/KasperSvendsen/helm-deployments'
-    targetRevision: main
+    repoURL: git@github.com:KasperSvendsen/helm-deployments.git
+    targetRevision: HEAD
     path: cv-chart
   destination:
     server: https://kubernetes.default.svc

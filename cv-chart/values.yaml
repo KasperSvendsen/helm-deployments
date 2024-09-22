@@ -1,12 +1,13 @@
 image:
   repository: kaspersvend/cv
-  tag: "v0.1.0"  # Initially set to a specific version or "latest"
   pullPolicy: Always
+  tag: "latest"
 
 service:
-  port: 80
+  type: ClusterIP             # Keep as ClusterIP unless you want LoadBalancer
+  port: 80                    # The service will listen on port 80
 
 ingress:
-  enabled: true
-  host: kaspersvendsen.dk
-  tlsSecret: kaspersvendsen-cert
+  enabled: true               # Enable ingress for the CV app
+  host: kaspersvendsen.dk      # Your domain for the CV app
+  tlsSecret: kaspersvendsen-cert  # The TLS secret name for HTTPS

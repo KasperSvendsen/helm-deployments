@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "cv-chart.fullname" . }}
-  namespace: {{ .Release.Namespace }}
   labels:
     app: {{ include "cv-chart.name" . }}
 spec:
@@ -16,7 +15,7 @@ spec:
         app: {{ include "cv-chart.name" . }}
     spec:
       containers:
-      - name: {{ include "cv-chart.name" . }}
-        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-        ports:
-        - containerPort: {{ .Values.service.port }}
+        - name: {{ include "cv-chart.name" . }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          ports:
+            - containerPort: 80
