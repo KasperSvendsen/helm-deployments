@@ -1,7 +1,7 @@
 image:
   repository: kaspersvend/cv
   pullPolicy: Always
-  tag: "latest"
+  tag: "v33.0.0"  # Updated to use the specific version instead of "latest"
 
 service:
   type: ClusterIP             # Keep as ClusterIP unless you want LoadBalancer
