@@ -6,7 +6,7 @@ metadata:
   annotations:
     argocd-image-updater.argoproj.io/image-list: kaspersvend/cv
     argocd-image-updater.argoproj.io/write-back-method: git
-    argocd-image-updater.argoproj.io/image-digest: "true"
+    argocd-image-updater.argoproj.io/image-digest: "true"  # Tracks the digest for latest updates
     argocd-image-updater.argoproj.io/image-tag-force-update: "true"
 spec:
   project: default

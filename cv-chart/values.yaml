@@ -1,5 +1,3 @@
-# values.yaml
-
 image:
   repository: kaspersvend/cv
   tag: "latest"  # Argo CD Image Updater will dynamically update this tag.
