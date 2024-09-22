@@ -1,17 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: cv-app
+  name: cv
   namespace: argocd
   annotations:
-    argocd-image-updater.argoproj.io/image-list: kaspersvend/cv
-    argocd-image-updater.argoproj.io/write-back-method: git
-    argocd-image-updater.argoproj.io/git-branch: main
-    argocd-image-updater.argoproj.io/git-path: cv-chart
+    argocd-image-updater.argoproj.io/image-list: kaspersvend/cv-app
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/KasperSvendsen/helm-deployments.git'
+    repoURL: 'https://github.com/KasperSvendsen/helm-deployments'
     targetRevision: main
     path: cv-chart
   destination:
